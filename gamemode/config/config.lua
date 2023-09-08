@@ -328,8 +328,8 @@ GM.Config.moneyModel = "models/props/cs_assault/money.mdl"
 -- Note: Remember to include the folder where the sound file is located.
 GM.Config.lockdownsound = "npc/overwatch/cityvoice/f_confirmcivilstatus_1_spkr.wav"
 
--- The skin DarkRP uses. Set to "default" to use the GMod default derma theme.
-GM.Config.DarkRPSkin = "DarkRP"
+-- Set to "default" to use the GMod default derma theme.
+GM.Config.DarkRPSkin = "default"
 GM.Config.currency = "$"
 GM.Config.currencyThousandSeparator = ","
 GM.Config.chatCommandPrefix = "/"

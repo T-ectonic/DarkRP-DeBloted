@@ -1,7 +1,7 @@
-"darkrp"
+"darkrpdeblot" // Just For Separating In Game Change To "darkrp" 
 {
     "base"          "sandbox"
-    "title"         "DarkRP"
+    "title"         "DarkRP DeBlot" // Just For Separating In Game Change To "DarkRP" 
     "version"       "2.7.0"
     "category"      "rp"
     "menusystem"    "1"
