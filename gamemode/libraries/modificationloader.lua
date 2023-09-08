@@ -11,7 +11,6 @@ DarkRP.disabledDefaults["modules"] = {
     ["chatsounds"]       = false,
     ["events"]           = false,
     ["fpp"]              = false,
-    ["hitmenu"]          = false,
     ["hud"]              = false,
     ["playerscale"]      = false,
 }
