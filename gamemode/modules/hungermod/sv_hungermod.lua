@@ -16,6 +16,7 @@ local function HMPlayerInitialSpawn(ply)
 end
 hook.Add("PlayerInitialSpawn", "HMPlayerInitialSpawn", HMPlayerInitialSpawn)
 
+/*
 local function HMAFKHook(ply, afk)
     if afk then
         ply.preAFKHunger = ply:getDarkRPVar("Energy")
@@ -25,6 +26,7 @@ local function HMAFKHook(ply, afk)
     end
 end
 hook.Add("playerSetAFK", "Hungermod", HMAFKHook)
+*/
 
 local function BuyFood(ply, args)
     if args == "" then

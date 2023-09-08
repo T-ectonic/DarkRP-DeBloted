@@ -225,7 +225,7 @@ local function RequestLicense(ply)
     local ischief-- then if there's a chief
     local iscop-- and then if there's a cop to ask
     for _, v in ipairs(player.GetAll()) do
-        if v:isMayor() and not v:getDarkRPVar("AFK") then
+        if v:isMayor() then
             ismayor = true
             break
         end
@@ -233,7 +233,7 @@ local function RequestLicense(ply)
 
     if not ismayor then
         for _, v in ipairs(player.GetAll()) do
-            if v:isChief() and not v:getDarkRPVar("AFK") then
+            if v:isChief() then
                 ischief = true
                 break
             end
