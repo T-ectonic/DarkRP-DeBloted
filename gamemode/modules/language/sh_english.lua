@@ -97,7 +97,6 @@ local my_language = {
     wanted_revoked = "%s is no longer wanted by the Police.\nRevoked by: %s",
     cant_arrest_other_cp = "You cannot arrest other CPs!",
     must_be_wanted_for_arrest = "The player must be wanted in order to be able to arrest them.",
-    cant_arrest_fadmin_jailed = "You cannot arrest a player who has been jailed by an admin.",
     cant_arrest_no_jail_pos = "You cannot arrest people since there are no jail positions set!",
     cant_arrest_spawning_players = "You cannot arrest players who are spawning.",
 

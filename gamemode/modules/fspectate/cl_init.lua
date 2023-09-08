@@ -21,44 +21,6 @@ function FSpectate.getSpecEnt()
 end
 
 /*---------------------------------------------------------------------------
-startHooks
-FAdmin tab buttons
----------------------------------------------------------------------------*/
-hook.Add("Initialize", "FSpectate", function()
-    surface.CreateFont("UiBold", {
-        size = 16,
-        weight = 800,
-        antialias = true,
-        shadow = false,
-        font = "Verdana"})
-
-    if not FAdmin then return end
-    FAdmin.StartHooks["zzSpectate"] = function()
-        FAdmin.Commands.AddCommand("Spectate", nil, "<Player>")
-
-        -- Right click option
-        FAdmin.ScoreBoard.Main.AddPlayerRightClick("Spectate", function(ply)
-            if not IsValid(ply) then return end
-            RunConsoleCommand("FSpectate", ply:UserID())
-        end)
-
-        local canSpectate = false
-        local function calcAccess()
-            CAMI.PlayerHasAccess(LocalPlayer(), "FSpectate", function(b, _)
-                canSpectate = b
-            end)
-        end
-        calcAccess()
-
-        -- Spectate option in player menu
-        FAdmin.ScoreBoard.Player:AddActionButton("Spectate", "fadmin/icons/spectate", Color(0, 200, 0, 255), function(ply) calcAccess() return canSpectate and ply ~= LocalPlayer() end, function(ply)
-            if not IsValid(ply) then return end
-            RunConsoleCommand("FSpectate", ply:UserID())
-        end)
-    end
-end)
-
-/*---------------------------------------------------------------------------
 Get the thirdperson position
 ---------------------------------------------------------------------------*/
 local function getThirdPersonPos(ent)
@@ -221,20 +183,6 @@ local function specBinds(ply, bind, pressed)
 end
 
 /*---------------------------------------------------------------------------
-Scoreboardshow
-Set to main view when roaming, open on a player when spectating
----------------------------------------------------------------------------*/
-local function fadminmenushow()
-    if isRoaming then
-        FAdmin.ScoreBoard.ChangeView("Main")
-    elseif IsValid(specEnt) and specEnt:IsPlayer() then
-        FAdmin.ScoreBoard.ChangeView("Main")
-        FAdmin.ScoreBoard.ChangeView("Player", specEnt)
-    end
-end
-
-
-/*---------------------------------------------------------------------------
 RenderScreenspaceEffects
 Draws the lines from players' eyes to where they are looking
 ---------------------------------------------------------------------------*/
@@ -338,12 +286,6 @@ local function drawHelp()
     draw.WordBox(2, 10, scrHalfH + 40, "Jump: Stop spectating", "UiBold", uiBackground, uiForeground)
     draw.WordBox(2, 10, scrHalfH + 60, "Reload: Stop spectating and teleport", "UiBold", uiBackground, uiForeground)
 
-    if FAdmin then
-        draw.WordBox(2, 10, scrHalfH + 80, "Opening FAdmin's menu while spectating a player", "UiBold", uiBackground, uiForeground)
-        draw.WordBox(2, 10, scrHalfH + 100, "\twill open their page!", "UiBold", uiBackground, uiForeground)
-    end
-
-
     local target = findNearestObject()
     local pls = player.GetAll()
     for i = 1, #pls do
@@ -415,7 +357,6 @@ local function startSpectate(um)
     hook.Add("ShouldDrawLocalPlayer", "FSpectate", function() return isRoaming or thirdperson end)
     hook.Add("Think", "FSpectate", specThink)
     hook.Add("HUDPaint", "FSpectate", drawHelp)
-    hook.Add("FAdmin_ShowFAdminMenu", "FSpectate", fadminmenushow)
     hook.Add("RenderScreenspaceEffects", "FSpectate", lookingLines)
 
     timer.Create("FSpectatePosUpdate", 0.5, 0, function()
@@ -436,7 +377,6 @@ stopSpectating = function()
     hook.Remove("ShouldDrawLocalPlayer", "FSpectate")
     hook.Remove("Think", "FSpectate")
     hook.Remove("HUDPaint", "FSpectate")
-    hook.Remove("FAdmin_ShowFAdminMenu", "FSpectate")
     hook.Remove("RenderScreenspaceEffects", "FSpectate")
 
     timer.Remove("FSpectatePosUpdate")

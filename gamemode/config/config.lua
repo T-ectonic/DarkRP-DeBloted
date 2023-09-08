@@ -438,7 +438,6 @@ GM.Config.DefaultLaws = {
 }
 
 GM.Config.PocketBlacklist = {
-    ["fadmin_jail"] = true,
     ["meteor"] = true,
     ["door"] = true,
     ["func_"] = true,
