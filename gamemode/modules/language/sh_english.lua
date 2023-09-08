@@ -428,9 +428,6 @@ local my_language = {
     wave = "Wave",
     dance = "Dance",
 
-    -- Hungermod
-    starving = "Starving!",
-
     -- Hitmenu
     hit = "hit",
     hitman = "Hitman",

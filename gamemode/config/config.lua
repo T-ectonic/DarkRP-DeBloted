@@ -522,11 +522,3 @@ GM.Config.hitmanText = "Hit\naccepted!"
 GM.Config.hitTargetCooldown = 120
 -- How long a customer has to wait to be able to buy another hit (from the moment the hit is accepted).
 GM.Config.hitCustomerCooldown = 240
-
---[[---------------------------------------------------------------------------
-Hungermod module
----------------------------------------------------------------------------]]
--- hungerspeed <Amount> - Set the rate at which players will become hungry (2 is the default).
-GM.Config.hungerspeed = 2
--- starverate <Amount> - How much health that is taken away every second the player is starving  (3 is the default).
-GM.Config.starverate = 3
