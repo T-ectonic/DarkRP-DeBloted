@@ -9,7 +9,6 @@ Disabled defaults
 DarkRP.disabledDefaults = {}
 DarkRP.disabledDefaults["modules"] = {
     ["chatsounds"]       = false,
-    ["hud"]              = false,
     ["playerscale"]      = false,
 }
 
