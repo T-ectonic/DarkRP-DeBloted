@@ -50,10 +50,9 @@ function GM:OnPlayerChat()
 end
 
 local FKeyBinds = {
-    ["gm_showhelp"] = "ShowHelp",
-    ["gm_showteam"] = "ShowTeam",
-    ["gm_showspare1"] = "ShowSpare1",
-    ["gm_showspare2"] = "ShowSpare2"
+    ["gm_showteam"] = "ShowTeam", // Not Sure
+    ["gm_showspare1"] = "ShowSpare1", // Cursor Unlock
+    ["gm_showspare2"] = "ShowSpare2" // F4
 }
 
 function GM:PlayerBindPress(ply, bind, pressed)
