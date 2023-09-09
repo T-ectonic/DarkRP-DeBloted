@@ -18,10 +18,6 @@ end
 
 local DarkRPFile
 function DarkRP.log(text, colour, noFileSave)
-    if colour then
-        CAMI.GetPlayersWithAccess("DarkRP_SeeEvents", fp{AdminLog, text, colour})
-    end
-
     if not GAMEMODE.Config.logging or noFileSave then return end
 
     if not DarkRPFile then -- The log file of this session, if it's not there then make it!

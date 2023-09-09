@@ -40,11 +40,6 @@ end
 
 hook.Add("loadCustomDarkRPItems", "CAMI privs", function()
     CAMI.RegisterPrivilege{
-        Name = "DarkRP_SeeEvents",
-        MinAccess = "admin"
-    }
-
-    CAMI.RegisterPrivilege{
         Name = "DarkRP_GetAdminWeapons",
         MinAccess = "admin"
     }

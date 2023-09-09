@@ -134,14 +134,6 @@ local my_language = {
     has_not_been_made_team = "%s has not been made %s!",
     job_has_become = "%s has been made a %s!",
 
-    -- Disasters
-    meteor_approaching = "WARNING: Meteor storm approaching!",
-    meteor_passing = "Meteor storm passing.",
-    meteor_enabled = "Meteor Storms are now enabled.",
-    meteor_disabled = "Meteor Storms are now disabled.",
-    earthquake_report = "Earthquake reported of magnitude %sMw",
-    earthtremor_report = "Earth tremor reported of magnitude %sMw",
-
     -- Keys, vehicles and doors
     keys_allowed_to_coown = "You are allowed to co-own this\n(Press Reload with keys or press F2 to co-own)\n",
     keys_other_allowed = "Allowed to co-own:",

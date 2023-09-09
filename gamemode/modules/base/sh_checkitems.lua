@@ -239,36 +239,6 @@ DarkRP.validateJob = fn.FAnd{baseSchema, tc.checkTable{
             )
         ),
 
-    mayor =
-        tc.addHint(
-            tc.optional(isbool),
-            "The mayor value must be either true or false."
-        ),
-
-    chief =
-        tc.addHint(
-            tc.optional(isbool),
-            "The chief value must be either true or false."
-        ),
-
-    medic =
-        tc.addHint(
-            tc.optional(isbool),
-            "The medic value must be either true or false."
-        ),
-
-    cook =
-        tc.addHint(
-            tc.optional(isbool),
-            "The cook value must be either true or false."
-        ),
-
-    hobo =
-        tc.addHint(
-            tc.optional(isbool),
-            "The hobo value must be either true or false."
-        ),
-
     playerClass =
         tc.addHint(
             tc.optional(isstring),
