@@ -94,18 +94,6 @@ function GM:canSeeLogMessage(ply, message, colour)
     return true
 end
 
-function GM:canEarnNPCKillPay(ply, npc)
-    return GAMEMODE.Config.npckillpay > 0
-end
-
-function GM:calculateNPCKillPay(ply, npc)
-    -- A NPC spawned by an addon might be worth more money than the default
-    if npc.KillValue then
-        return npc.KillValue
-    end
-    return GAMEMODE.Config.npckillpay
-end
-
 --[[---------------------------------------------------------
  Gamemode functions
  ---------------------------------------------------------]]
@@ -262,25 +250,6 @@ function GM:ShowTeam(ply)
 end
 
 function GM:ShowHelp(ply)
-end
-
-function GM:OnNPCKilled(victim, ent, weapon)
-    -- If something killed the npc
-    if not ent then return end
-
-    if ent:IsVehicle() and ent:GetDriver():IsPlayer() then ent = ent:GetDriver() end
-
-    -- If it wasn't a player directly, find out who owns the prop that did the killing
-    if not ent:IsPlayer() then
-        ent = Player(tonumber(ent.SID) or 0)
-    end
-
-    -- If we know by now who killed the NPC, pay them.
-    if IsValid(ent) and hook.Call("canEarnNPCKillPay", GAMEMODE, ent, victim) then
-        local amount = hook.Call("calculateNPCKillPay", GAMEMODE, ent, victim)
-        ent:addMoney(amount)
-        DarkRP.notify(ent, 0, 4, DarkRP.getPhrase("npc_killpay", DarkRP.formatMoney(amount)))
-    end
 end
 
 function GM:KeyPress(ply, code)

@@ -40,7 +40,6 @@ local my_language = {
     reset_money = "%s has reset all players' money!",
     has_given = "%s has given you %s",
     you_gave = "You gave %s %s",
-    npc_killpay = "%s for killing an NPC!",
     profit = "profit",
     loss = "loss",
     Donate = "Donate",
