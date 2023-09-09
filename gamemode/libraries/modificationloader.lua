@@ -21,7 +21,6 @@ DarkRP.disabledDefaults["demotegroups"]     = {}
 DarkRP.disabledDefaults["doorgroups"]       = {}
 DarkRP.disabledDefaults["entities"]         = {}
 DarkRP.disabledDefaults["groupchat"]        = {}
-DarkRP.disabledDefaults["hitmen"]           = {}
 DarkRP.disabledDefaults["jobs"]             = {}
 DarkRP.disabledDefaults["shipments"]        = {}
 DarkRP.disabledDefaults["vehicles"]         = {}

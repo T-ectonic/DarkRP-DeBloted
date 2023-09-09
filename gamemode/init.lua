@@ -19,9 +19,8 @@ AddCSLuaFile("libraries/fn.lua")
 AddCSLuaFile("libraries/tablecheck.lua")
 
 AddCSLuaFile("config/config.lua")
-AddCSLuaFile("config/addentities.lua")
+AddCSLuaFile("config/addcategory.lua")
 AddCSLuaFile("config/jobrelated.lua")
-AddCSLuaFile("config/ammotypes.lua")
 
 AddCSLuaFile("cl_init.lua")
 
@@ -103,8 +102,7 @@ end
 
 DarkRP.DARKRP_LOADING = true
 include("config/jobrelated.lua")
-include("config/addentities.lua")
-include("config/ammotypes.lua")
+include("config/addcategory.lua")
 DarkRP.DARKRP_LOADING = nil
 
 DarkRP.finish()

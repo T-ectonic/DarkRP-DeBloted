@@ -89,10 +89,6 @@ GM.Config.dropweapondeath               = false
 GM.Config.dropspawnedweapons            = false
 -- dynamicvoice - Enable/disable whether only people in the same room as you can hear your mic.
 GM.Config.dynamicvoice                  = true
--- earthquakes - Enable/disable earthquakes.
-GM.Config.earthquakes                   = false
--- enablebuypistol - Turn /buy on of off.
-GM.Config.enablebuypistol               = true
 -- enforceplayermodel - Whether or not to force players to use their role-defined character models.
 GM.Config.enforceplayermodel            = true
 -- globalshow - Whether or not to display player info above players' heads in-game.
@@ -145,8 +141,6 @@ GM.Config.removeondisconnect            = true
 GM.Config.respawninjail                 = true
 -- restrictallteams - Enable/disable Players can only be citizen until an admin allows them.
 GM.Config.restrictallteams              = false
--- restrictbuypistol - Enabling this feature makes /buy available only to Gun Dealers.
-GM.Config.restrictbuypistol             = false
 -- restrictdrop - Enable/disable restricting the weapons players can drop. Setting this to true disallows weapons from shipments from being dropped.
 GM.Config.restrictdrop                  = false
 -- revokeLicenseOnJobChange - Whether licenses are revoked when a player changes jobs.
@@ -171,8 +165,6 @@ GM.Config.wantedrespawn                 = false
 GM.Config.wantedsuicide                 = false
 -- realisticfalldamage - Enable/Disable dynamic fall damage. Setting mp_falldamage to 1 will over-ride this.
 GM.Config.realisticfalldamage           = true
--- printeroverheat - Whether the default money printer can overheat on its own.
-GM.Config.printeroverheat               = true
 -- weaponCheckerHideDefault - Hide default weapons when checking weapons.
 GM.Config.weaponCheckerHideDefault      = true
 -- weaponCheckerHideNoLicense - Hide weapons that do not require a license.
@@ -206,8 +198,6 @@ GM.Config.demotetime                    = 120
 GM.Config.doorcost                      = 30
 -- entremovedelay - how long to wait before removing a bought entity after disconnect.
 GM.Config.entremovedelay                = 0
--- gunlabweapon - The weapon that the gunlab spawns.
-GM.Config.gunlabweapon                  = "weapon_p2282"
 -- jailtimer - Sets the jailtimer (in seconds).
 GM.Config.jailtimer                     = 120
 -- lockdowndelay - The amount of time a mayor must wait before starting the next lockdown.
@@ -218,12 +208,6 @@ GM.Config.maxadvertbillboards           = 3
 GM.Config.maxCheques                    = 5
 -- maxdoors - Sets the max amount of doors one can own.
 GM.Config.maxdoors                      = 20
--- maxdrugs - Sets max drugs.
-GM.Config.maxdrugs                      = 2
--- maxfoods - Sets the max food cartons per Microwave owner.
-GM.Config.maxfoods                      = 2
--- maxfooditems - Sets the max amount of food items a player can buy from the F4 menu.
-GM.Config.maxfooditems                  = 20
 -- maxlawboards - The maximum number of law boards the mayor can place.
 GM.Config.maxlawboards                  = 2
 -- maxletters - Sets max letters.
@@ -232,36 +216,20 @@ GM.Config.maxletters                    = 10
 GM.Config.maxlotterycost                = 250
 -- maxvehicles - Sets how many vehicles one can buy.
 GM.Config.maxvehicles                   = 5
--- microwavefoodcost - Sets the sale price of Microwave Food.
-GM.Config.microwavefoodcost             = 30
--- gunlabguncost - Sets the initial price of a gun from a gunlab. Note that the
--- gunlab owner can change this price.
-GM.Config.gunlabguncost                 = 200
--- druglabdrugcost - Sets the initial price of drugs from a drugs lab. Note that
--- the drugs lab owner can change this price.
-GM.Config.druglabdrugcost               = 100
 -- minlotterycost - Minimum payment the mayor can set to join a lottery.
 GM.Config.minlotterycost                = 30
 -- Money packets will get removed if they don't get picked up after a while. Set to 0 to disable.
 GM.Config.moneyRemoveTime               = 600
--- mprintamount - Value of the money printed by the money printer.
-GM.Config.mprintamount                  = 250
 -- normalsalary - Sets the starting salary for newly joined players.
 GM.Config.normalsalary                  = 45
--- npckillpay - Sets the money given for each NPC kill.
-GM.Config.npckillpay                    = 10
 -- paydelay - Sets how long it takes before people get salary.
 GM.Config.paydelay                      = 160
--- pocketitems - Sets the amount of objects the pocket can carry.
-GM.Config.pocketitems                   = 10
 -- pricecap - The maximum price of items (using /price).
 GM.Config.pricecap                      = 500
 -- pricemin - The minimum price of items (using /price).
 GM.Config.pricemin                      = 50
 -- propcost - How much prop spawning should cost (prop paying must be enabled for this to have an effect).
 GM.Config.propcost                      = 10
--- quakechance - Chance of an earthquake happening.
-GM.Config.quakechance                   = 4000
 -- respawntime - Minimum amount of seconds a player has to wait before respawning.
 GM.Config.respawntime                   = 1
 -- changejobtime - Minimum amount of seconds a player has to wait before changing job.
@@ -396,33 +364,6 @@ GM.Config.CategoryOverride = {
         ["Civil Protection Chief"]              = "Civil Protection",
         ["Mayor"]                               = "Civil Protection",
     },
-    entities = {
-        ["Drug lab"]                            = "Other",
-        ["Money printer"]                       = "Other",
-        ["Gun lab"]                             = "Other",
-
-    },
-    shipments = {
-        ["AK47"]                                = "Rifles",
-        ["MP5"]                                 = "Rifles",
-        ["M4"]                                  = "Rifles",
-        ["Mac 10"]                              = "Other",
-        ["Pump shotgun"]                        = "Shotguns",
-        ["Sniper rifle"]                        = "Snipers",
-
-    },
-    weapons = {
-        ["Desert eagle"]                        = "Pistols",
-        ["Fiveseven"]                           = "Pistols",
-        ["Glock"]                               = "Pistols",
-        ["P228"]                                = "Pistols",
-    },
-    vehicles = {}, -- There are no default vehicles.
-    ammo = {
-        ["Pistol ammo"]                         = "Other",
-        ["Shotgun ammo"]                        = "Other",
-        ["Rifle ammo"]                          = "Other",
-    },
 }
 
 -- The list of weapons admins spawn with, in addition to the default weapons, a job's weapons and GM.Config.AdminsCopWeapons.
@@ -438,7 +379,6 @@ GM.Config.DefaultLaws = {
 }
 
 GM.Config.PocketBlacklist = {
-    ["meteor"] = true,
     ["door"] = true,
     ["func_"] = true,
     ["player"] = true,
@@ -447,8 +387,6 @@ GM.Config.PocketBlacklist = {
     ["env_"] = true,
     ["path_"] = true,
     ["prop_physics"] = true,
-    ["money_printer"] = true,
-    ["gunlab"] = true,
     ["prop_dynamic"] = true,
     ["prop_vehicle_prisoner_pod"] = true,
     ["keypad_wire"] = true,
@@ -475,8 +413,6 @@ GM.Config.noStripWeapons = {
 -- This only applies when removeclassitems is set to true.
 -- Note: entities will only be removed when the player changes to a job that is not allowed to have the entity.
 GM.Config.preventClassItemRemoval = {
-    ["gunlab"] = false,
-    ["microwave"] = false,
     ["spawned_shipment"] = false,
 }
 
