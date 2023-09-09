@@ -268,10 +268,6 @@ GM.Config.walkspeed                     = 160
 GM.Config.falldamagedamper              = 15
 -- falldamageamount - The base damage taken from falling for static fall damage. Default is 10.
 GM.Config.falldamageamount              = 10
--- printeroverheatchance - The likelyhood of a printer overheating. The higher this number, the less likely (minimum 3, default 22).
-GM.Config.printeroverheatchance         = 22
--- printerreward - Reward for destroying a money printer.
-GM.Config.printerreward                 = 950
 
 --[[---------------------------------------------------------------------------
 Chat distance settings
@@ -301,8 +297,6 @@ GM.Config.DarkRPSkin = "default"
 GM.Config.currency = "$"
 GM.Config.currencyThousandSeparator = ","
 GM.Config.chatCommandPrefix = "/"
-GM.Config.F1MenuHelpPage = "https://darkrp.miraheze.org/wiki/Main_Page"
-GM.Config.F1MenuHelpPageTitle = "DarkRP Wiki"
 
 -- The sound that plays when you get a DarkRP notification
 GM.Config.notificationSound = "buttons/lightswitch2.wav"
